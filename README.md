@@ -18,6 +18,8 @@
 
 `$ npm create vue@latest {.|project-name}`
 (Typescript, JSX Support, Vue Router, Pinia, Unit Testing, End-to-End Testing, ESLint, Dev Tools)
+`$ cd {project-name}`
+`npm {i|install}`
 
 ### Change Port
 
@@ -57,12 +59,12 @@ Project Setup:(Typescript: No, JSX Support: No, Vue Router: No, Pinia: No Unit T
 07. Vue Components
 08. Getting Setup
 09. Using The Vue CDN
-10.
-11.
-12.
-13.
-14.
-15.
+10. Create-Vue Setup 
+11. Vue Official Extension
+12. Exploring Folders & Files
+13. Boilerplate Clean Up
+14. Component Structure
+15. Options API data() & Interpolation
 16.
 17.
 18.
