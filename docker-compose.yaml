@@ -1,0 +1,4 @@
+services:
+  vue-app:
+    build:
+      context: .

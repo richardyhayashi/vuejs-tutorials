@@ -1,0 +1,38 @@
+services:
+  nginx:
+    image: nginx:1.27.0-alpine
+    container_name: nginx_${PROJECT_NAME}
+    restart: unless-stopped
+    ports:
+      - ${NGINX_PORT_OUT}:${NGINX_PORT}
+      - ${NGINX_SSL_OUT}:${NGINX_SSL}
+    volumes:
+      - ./etc/nginx/conf.d:/etc/nginx/conf.d:ro
+      # Default directory.
+      #- :/usr/share/nginx/html
+
+  vue-app:
+    image: ${PROJECT_NAME}:1.0.0
+    build:
+      dockerfile: Dockerfile.dev
+      args:
+        VUE_APP_NAME: ${PROJECT_NAME}
+        VUE_PORT: ${VUE_PORT}
+        VUE_SRC_DIR: ${VUE_SRC_DIR}
+    #command: sh -c ""
+    container_name: ${PROJECT_NAME}_c
+    restart: unless-stopped
+    #ports:
+    #  - ${VUE_PORT_OUT}:${VUE_PORT}
+    volumes:
+      - ./src/${VUE_SRC_DIR}:/app
+      - node_modules:/app/node_modules
+    environment:
+      - NODE_ENV=developmemt
+    #env_file:
+    #  - ./.env
+    depends_on:
+      - nginx
+
+volumes:
+  node_modules:
