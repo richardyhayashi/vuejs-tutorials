@@ -3,10 +3,14 @@
 * NuxtJS - Meta Framework; Serverside rendered apps
 * Gridsome - For static websites
 
-Vue Components
+## Vue Components
 
 * Options API vs Composition API
 * \<template\>, \<script\>, \<style\>
+
+## Options API
+
+`<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>`
 
 ## Vue Project Setup
 
@@ -52,7 +56,7 @@ Project Setup:(Typescript: No, JSX Support: No, Vue Router: No, Pinia: No Unit T
 06. Why Vue.js?
 07. Vue Components
 08. Getting Setup
-09.
+09. Using The Vue CDN
 10.
 11.
 12.
