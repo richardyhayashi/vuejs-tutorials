@@ -10,6 +10,8 @@ services:
       - ./etc/nginx/conf.d:/etc/nginx/conf.d:ro
       # Default directory.
       #- :/usr/share/nginx/html
+    #env_file:
+    #  - ./.env
 
   vue-app:
     image: ${PROJECT_NAME}:1.0.0
@@ -19,8 +21,8 @@ services:
         VUE_APP_NAME: ${PROJECT_NAME}
         VUE_PORT: ${VUE_PORT}
         VUE_SRC_DIR: ${VUE_SRC_DIR}
-    #command: sh -c ""
     container_name: ${PROJECT_NAME}_c
+    #command: sh -c ""
     restart: unless-stopped
     #ports:
     #  - ${VUE_PORT_OUT}:${VUE_PORT}
